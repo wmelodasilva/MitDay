@@ -1,24 +1,26 @@
-//
-//  ContentView.swift
-//  MitDay
-//
-//  Created by WMELO on 03/09/25.
-//
-
+// ContentView.swift
 import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
+#Preview {
+    LaunchScreen()
 }
 
-#Preview {
-    ContentView()
+struct ContentView: View {
+    @State private var isLoading = true
+    
+    var LoadingMessage: String
+
+    var body: some View {
+        Group {
+            if isLoading {
+                LaunchScreen()
+            }
+        }
+        
+        .onAppear {
+            // Simular loading
+            DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+                isLoading = false
+            }
+        }
+    }
 }
