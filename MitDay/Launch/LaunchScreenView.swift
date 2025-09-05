@@ -20,6 +20,8 @@ struct LaunchScreen: View {
                     RoundedRectangle(cornerRadius: 40)
                         .fill(Color.verdeClaro)
                         .frame(width: 240, height: 240)
+                        .opacity(10)
+                        
                     
                     Image("IconLoading")
                         .resizable()

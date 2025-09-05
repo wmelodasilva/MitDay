@@ -1,18 +1,18 @@
 // ContentView.swift
 import SwiftUI
 #Preview {
-    LaunchScreen()
+    RegisterView()
 }
 
 struct ContentView: View {
     @State private var isLoading = true
-    
-    var LoadingMessage: String
 
     var body: some View {
         Group {
             if isLoading {
                 LaunchScreen()
+            } else{
+                RegisterView()
             }
         }
         
