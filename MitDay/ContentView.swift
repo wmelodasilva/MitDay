@@ -1,8 +1,4 @@
-// ContentView.swift
 import SwiftUI
-#Preview {
-    RegisterView()
-}
 
 struct ContentView: View {
     @State private var isLoading = true
@@ -10,17 +6,21 @@ struct ContentView: View {
     var body: some View {
         Group {
             if isLoading {
-                LaunchScreen()
-            } else{
+                LaunchScreen( )
+            } else {
                 RegisterView()
             }
         }
-        
         .onAppear {
             // Simular loading
-            DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
                 isLoading = false
             }
         }
     }
 }
+
+#Preview {
+    ContentView()
+}
+

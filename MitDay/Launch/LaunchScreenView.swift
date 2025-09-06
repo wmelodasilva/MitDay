@@ -32,9 +32,10 @@ struct LaunchScreen: View {
                 Text("MitDay")
                     .font(.system(size: 40))
                     .fontWeight(.bold)
-                    .foregroundColor(.verdeClaro)
+                    .foregroundColor(.verdeEscuro)
                 
                 Text("Todo grande dev começou com um commit")
+                    .foregroundColor(.verdeEscuro)
                     .fontWeight(.bold)
             }
         }
