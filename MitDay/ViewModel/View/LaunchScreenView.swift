@@ -10,18 +10,24 @@ import SwiftUI
 }
 
 struct LaunchScreen: View {
+    @State private var currentIndex = 0
+    let mensager = [
+        "Todo grande dev começou com um commit",
+        "Um commit por dia afasta o desemprego",
+        "Vamos criar hoje?"
+    ]
     var body: some View {
         ZStack {
             Color(Color.brancoPalido)
                 .ignoresSafeArea()
-             
+            
             VStack(spacing: 20) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 40)
                         .fill(Color.verdeClaro)
                         .frame(width: 240, height: 240)
                         .opacity(10)
-                        
+                    
                     
                     Image("IconLoading")
                         .resizable()
@@ -34,10 +40,19 @@ struct LaunchScreen: View {
                     .fontWeight(.bold)
                     .foregroundColor(.verdeEscuro)
                 
-                Text("Todo grande dev começou com um commit")
+                Text(mensager[currentIndex])
                     .foregroundColor(.verdeEscuro)
                     .fontWeight(.bold)
+                    .onAppear(){
+                        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
+                            withAnimation {
+                                currentIndex = (currentIndex + 1) % mensager.count
+                            }
+                        }
+                    }
             }
         }
+        
     }
 }
+

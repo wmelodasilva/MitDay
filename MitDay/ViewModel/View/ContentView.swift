@@ -6,14 +6,14 @@ struct ContentView: View {
     var body: some View {
         Group {
             if isLoading {
-                LaunchScreen( )
+                LaunchScreen()
             } else {
                 RegisterView()
             }
         }
         .onAppear {
             // Simular loading
-            DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 isLoading = false
             }
         }

@@ -15,6 +15,7 @@ struct RegisterView: View {
     @State private var nome: String = ""
     @State private var email: String = ""
     @State private var senha: String = ""
+    
     var body: some View {
         
     ZStack{
