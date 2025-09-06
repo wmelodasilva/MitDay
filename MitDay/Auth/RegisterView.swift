@@ -18,14 +18,14 @@ struct RegisterView: View {
     var body: some View {
         
     ZStack{
-        Color.verdeClaro
+        Color.brancoPalido
             .ignoresSafeArea()
         
       VStack{
                 
-        Text("CADASTRE-SE")
+        Text("CRIAR CONTA")
             .font(.largeTitle)
-            .foregroundStyle(Color.brancoPalido)
+            .foregroundStyle(Color.verdeEscuro)
             .fontWeight(.bold)
             .padding(.top, -30)
           
@@ -34,33 +34,31 @@ struct RegisterView: View {
                     .padding()
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 110, style: .continuous))
                     .overlay( RoundedRectangle(cornerRadius: 16)
-                        .strokeBorder(Color.white.opacity(8), lineWidth: 1))
+                        .strokeBorder(Color.verdeEscuro.opacity(8), lineWidth: 1))
                     
                     .padding()
-                
+    
                 TextField("E-mail", text: $email)
                     .padding()
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 110, style: .continuous))
                     .overlay( RoundedRectangle(cornerRadius: 16)
-                        .strokeBorder(Color.white.opacity(8), lineWidth: 1))
+                        .strokeBorder(Color.verdeEscuro.opacity(8), lineWidth: 1))
                     .padding()
                 
                 SecureField("Senha", text: $senha)
                     .padding()
                     .background(.ultraThinMaterial, in:RoundedRectangle(cornerRadius: 19))
-                    .overlay(RoundedRectangle(cornerRadius: 19) .stroke(Color.white).opacity(30))
+                    .overlay(RoundedRectangle(cornerRadius: 19) .stroke(Color.verdeEscuro).opacity(30))
                     .padding()
                 
                 Button("Cadastrar") {
                         print("Cadastro realizado")
                     }
-                    .padding()
-                    
-                    .background(Color.verdeEscuro.opacity(0.55) .opacity(0.7), in: RoundedRectangle(cornerRadius: 16))
+                .frame(width: 250)
+                .padding()
+                    .background(Color.verdeEscuro.opacity(10) .opacity(0.7), in: RoundedRectangle(cornerRadius: 13))
                     .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-                    .padding(.horizontal, 20)
+                  
                 
                     
                 }
